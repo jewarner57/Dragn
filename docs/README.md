@@ -1,5 +1,5 @@
 # Dragn
-Drag and drop built for elegant simplicity
+Drag and drop built for elegant simplicity with mobile compatibility
 
 ## Getting Started
 Dragn is avaliable for [download on npm](/)
