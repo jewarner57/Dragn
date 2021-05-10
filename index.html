@@ -9,22 +9,38 @@
 </head>
 
 <body>
-  <div class="redDiv dragn-drag"></div>
-  <div class="redDiv dragn-drag"></div>
-  <div class="redDiv dragn-drag"></div>
-  <div class="redDiv dragn-drag"></div>
+  <div class="redDiv dragn-drag" data-dragn-dropon='mylist'></div>
+  <div class="redDiv dragn-drag" data-dragn-dropon='mylist'></div>
+  <div class="redDiv dragn-drag" data-dragn-dropon='mylist'></div>
 
+  <div class="blueDiv dragn-drop" data-dragn-dropon='mylist'></div>
+
+  <div class="mylist"></div>
 
   <script src="index.js"></script>
 </body>
 
 <style>
-  .redDiv {
+  .mylist {
+    width: 100px;
+    height: 600px;
+    padding: 20px 30px;
+    background-color: silver;
+  }
+
+  .dragn-drag,
+  .dragn-drop {
     width: 100px;
     height: 100px;
     display: block;
+  }
+
+  .redDiv {
     background-color: red;
-    /* margin: 20px; */
+  }
+
+  .blueDiv {
+    background-color: blue;
   }
 </style>
 

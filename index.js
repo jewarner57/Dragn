@@ -10,23 +10,24 @@ draggableElems.forEach((elem) => {
   elem.addEventListener("mouseup", endDrag)
   elem.addEventListener("touchend", endDrag)
 
-  // elem.addEventListener("mouseleave", endDrag)
+  // End the drag if the mouse leaves the div
+  elem.addEventListener("mouseleave", endDrag)
 
   elem.addEventListener('mousemove', dragMoved)
   elem.addEventListener('touchmove', touchMoved)
 })
 
 function startDrag(event) {
-  event.target.style.backgroundColor = 'green'
+  event.target.style.boxShadow = '4px 4px 4px 1px rgba(0, 0, 0, 0.2)'
   event.target.style.position = 'absolute'
 
   // Set element as being currently dragged
   event.target.dataset.isnowdragn = 'true'
 
   // Set element's default z-index
-  // event.target.dataset.defaultzindex = event.target.style.zIndex
+  event.target.dataset.defaultzindex = event.target.style.zIndex
   // Raise the element's z-index
-  // event.target.style.zIndex = 1000
+  event.target.style.zIndex = 1000
 }
 
 function dragMoved(event) {
@@ -35,8 +36,6 @@ function dragMoved(event) {
     // Get elem height and width
     let width = event.target.offsetWidth
     let height = event.target.offsetHeight
-
-    console.log(event)
 
     // Get current mouse position
     let mouseX = event.clientX
@@ -66,11 +65,12 @@ function touchMoved(event) {
 }
 
 function endDrag(event) {
-  event.target.style.backgroundColor = 'red'
+  // remove shadow
+  event.target.style.boxShadow = 'None'
 
   // Set element as not being currently dragged
   event.target.dataset.isnowdragn = 'false'
 
   // Reset the elem's z-index to it's default value
-  // event.target.style.zIndex = event.target.dataset.defaultzindex
+  event.target.style.zIndex = event.target.dataset.defaultzindex
 }
